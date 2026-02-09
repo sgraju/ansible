@@ -9,6 +9,8 @@
     ansibe.builtin.debug:
       msg: "Hellow from PLAY-01 and TASK-02"
 
+- name: PLAY-02
+  hosts: frontend
   tasks:
   - name: PLAY-02 and TASK-01
     ansible.builtin.debug:
