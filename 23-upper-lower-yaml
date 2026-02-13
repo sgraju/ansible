@@ -5,7 +5,7 @@
     technologies: DevSecOps, Shell, Ansible, Terraform, Kubernetes, Docker, Jenkins # string
     name: "Govardhan Raju S"
     gmail: "sgraju@GMAIL.COM"
-    ipaddress: 345.345.3342.1321
+    ipaddress: "192.190.124.10"
     # dictionary == map
     tags:
       Application: payment
