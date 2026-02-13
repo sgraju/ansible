@@ -1,0 +1,45 @@
+- name: functions
+  hosts: local
+  connection: local
+  vars:
+    technologies: DevSecOps, Shell, Ansible, Terraform, Kubernetes, Docker, Jenkins # string
+    name: "Govardhan Raju S"
+    gmail: "sgraju@GMAIL.COM"
+    # dictionary == map
+    tags:
+      Application: payment
+      Environment: dev
+  tasks:
+  - name: default variable
+    ansible.builtin.debug:
+      msg: "Hello, {{ name | default('Govardhan') }}"
+
+  # string to list
+  - name: convert string to list
+    ansible.builtin.debug:
+      msg: "Technologies are: {{ technologies | split(',') }}"
+
+  - name: convert map to list
+    ansible.builtin.debug:
+      msg: "Tags are: {{ tags | dict2items }}"
+
+  - name: read yaml and take it into variable
+    ansible.builtin.set_fact:
+      student_yaml: "{{ lookup('file', 'student.yaml' | from_yaml) }}"
+
+  - name: convert yaml into json
+    ansible.builtin.debug:
+      msg: "json: {{ student_yaml | to_json }}"
+
+  - name: save json to file
+    ansible.builtin.copy:
+      dest: ./student-data.json
+      content: "{{ student_yaml | to_nice_json }}"
+
+  - name: convert to lowercase
+    ansible.builtin.debug:
+      msg: "{{ gmail | lower }}"
+
+  - name: convert to upperrcase
+    ansible.builtin.debug:
+      msg: "{{ name | upper }}"
