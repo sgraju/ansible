@@ -46,5 +46,4 @@
       msg: "{{ name | upper }}"
   
   - name: check IP is vaid or not
-    ansible.builtin.debug:
-      msg: "{{ ipaddress | ansible.utils.ipv4 }}"
+    ansible.builtin.debug: "{{ ipaddress | ansible.utils.ipv4 }}"
