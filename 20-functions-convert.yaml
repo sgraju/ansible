@@ -5,8 +5,8 @@
     technologies: DevSecOps, Shell, Ansible, Terraform, Kubernetes, Docker, Jenkins # string
     # dictionary == map
     tags:
-    Application: payment
-    Environment: dev
+      Application: payment
+      Environment: dev
   tasks:
   - name: default variable
     ansible.builtin.debug:
