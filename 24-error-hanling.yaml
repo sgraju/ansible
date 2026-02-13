@@ -5,7 +5,7 @@
   tasks:
   - name: check user exists or not
     ansible.builtin.command: id roboshob
-    register: user_outpur
+    register: user_output
     ignore_errors: true
 
   - name: print the output
