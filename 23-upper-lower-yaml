@@ -5,6 +5,7 @@
     technologies: DevSecOps, Shell, Ansible, Terraform, Kubernetes, Docker, Jenkins # string
     name: "Govardhan Raju S"
     gmail: "sgraju@GMAIL.COM"
+    ipaddress: 345.345.3342.1321
     # dictionary == map
     tags:
       Application: payment
@@ -43,3 +44,7 @@
   - name: convert to upperrcase
     ansible.builtin.debug:
       msg: "{{ name | upper }}"
+  
+  - name: check IP is vaid or not
+    ansible.builtin.debug:
+      msg: "{{ ipaddress | ansible.utils.ipv4 }}"
