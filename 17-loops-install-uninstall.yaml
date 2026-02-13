@@ -6,7 +6,7 @@
   - name: Installing packages
     ansible.builtin.package:
       name: "{{ item.name }}"
-      state: "{{ latest.state }}"
+      state: "{{ item.latest }}"
     loop:
     - { name: "nginx", state: "latest"}
     - { name: "mysql", state: "absent"}
