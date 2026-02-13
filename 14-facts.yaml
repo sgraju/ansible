@@ -6,7 +6,7 @@
     ansible.builtin.dnf:
       name: nginx
       state: latest
-    when: ansible_os_family == "Redhat"
+    when: ansible_os_family == "RedHat"
 
   - name: install nginx if redhat
     ansible.builtin.apt:
